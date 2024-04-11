@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../static/base.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    <script src="../static/index.js"></script>
+    <title>Control</title>
+  </head>
+  <body>
+    <div class="image_div">
+      <img id="img" src="{{ url_for('static',filename='image.jpg') }}"></img>
+    </div>
+    <div class="state_div">
+      <p id="l_motor">狀態列：左側馬達：</p>
+      <p id="r_motor"> | 右側馬達：</p>
+      <p id="angle"> | 車頭角度(正為右)：</p>
+    </div>
+    <div class="con_div">
+      <table class="con_table">
+        <tbody>
+          <tr>
+            <td class="item"></td>
+            <td class="item">
+              <button type="button" class="btn item" onmousedown="sendAct('F',0)" onmouseup="stop()">
+                F
+              </button>
+            </td>
+            <td class="item"></td>
+          </tr>
+          <tr>
+            <td class="item">
+              <button type="button" class="btn item" onmousedown="sendAct('L',0)" onmouseup="stop()">
+                L
+              </button>
+            </td>
+            <td class="item"></td>
+            <td class="item">
+              <button type="button" class="btn item" onmousedown="sendAct('R',0)" onmouseup="stop()">
+                R
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="item"></td>
+            <td class="item">
+              <button type="button" class="btn item" onmousedown="sendAct('B',0)" onmouseup="stop()">
+                B
+              </button>
+            </td>
+            <td class="item"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
